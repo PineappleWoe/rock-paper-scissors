@@ -46,7 +46,7 @@
                         playerScore++;
                         alert(`Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`);
                     } else {
-                        gameRound--;
+                        gameRound = 0;
                         alert("Please refresh and input a valid input.");
                         playerSelection = prompt("Rock, Paper or Scissors?");
                     }
