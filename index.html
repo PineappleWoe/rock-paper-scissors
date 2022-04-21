@@ -8,17 +8,22 @@
 </head>
 <body>
     <script>
-        // Function to call random item for Rock Paper Scissors Game
+        // Function to call random item for 'Rock Paper Scissors' Game
+        // aiItem returns the randomised choice
         function computerPlay(){
             const itemChoice = ["Rock", "Paper", "Scissors"];
             let aiItem = itemChoice[Math.floor(Math.random()*itemChoice.length)];
             return aiItem;
         }
 
+        // Declare the Players Choice and Computers Choice
         let playerSelection = prompt("Rock, Paper or Scissors?");
         const computerSelection = computerPlay();
 
         console.log(`Player Choice: ${playerSelection}`);
+
+        // Decides the Winner
+        // Currently ALWAYS resulting in a draw, no matter the user input or computerSelection
 
         if (computerSelection.toUpperCase === playerSelection.toUpperCase){
             console.log("Draw! Refresh to play again");
@@ -40,11 +45,6 @@
         }
 
         console.log(computerSelection);
-
-    //    let computerPlay;
-    //    let rockPaperScissors = ["Rock", "Paper", "Scissors"];
-    //    computerPlay = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
-    //    console.log(computerPlay);
 
     </script>
 </body>
