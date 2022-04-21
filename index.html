@@ -84,15 +84,14 @@
         console.log(game());
 
         // Play Again Loop (Will cancel when User declines)
-        let continueGame = 1;
-        while (continueGame = 1){
+        for (let continueGame = 1; continueGame > 0;){
             let playAgain = confirm("Play again?");
                 if (playAgain) {
                     console.log(game());
                 }
                 else {
+                    continueGame = 0;
                     alert("Goodbye!");
-                    continueGame--;
                 }
         }
     </script>
