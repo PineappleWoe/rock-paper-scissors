@@ -23,22 +23,20 @@
         console.log(`Player Choice: ${playerSelection}`);
 
         // Decides the Winner
-        // Currently ALWAYS resulting in a draw, no matter the user input or computerSelection
-
-        if (computerSelection.toUpperCase === playerSelection.toUpperCase){
+        if (computerSelection.toUpperCase() === playerSelection.toUpperCase()){
             console.log("Draw! Refresh to play again");
             console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`);
-        } else if (computerSelection === "Rock" && playerSelection.toUpperCase === "PAPER") {
+        } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "PAPER") {
             console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Rock" && playerSelection.toUpperCase === "SCISSORS") {
+        } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "SCISSORS") {
             console.log(`Game! ${computerSelection} beats ${playerSelection}`);
-        } else if (computerSelection === "Paper" && playerSelection.toUpperCase === "ROCK") {
+        } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "ROCK") {
             console.log(`Game! ${computerSelection} beats ${playerSelection}`);
-        } else if (computerSelection === "Paper" && playerSelection.toUpperCase === "SCISSORS") {
+        } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "SCISSORS") {
             console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase === "ROCK") {
+        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "ROCK") {
             console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase === "PAPER") {
+        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "PAPER") {
             console.log(`Game! ${computerSelection} beats ${playerSelection}`);
         } else {
             console.log("Please refresh and input a valid input.");
