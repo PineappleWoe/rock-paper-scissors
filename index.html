@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors | The Odin Project</title>
 </head>
 <body>
     <script>
@@ -14,6 +14,7 @@
             let playerScore = 0;
             let computerScore = 0;
 
+            // For Loop for 'Best out of 3' results
             for (let gameRound = 0; gameRound < 3; gameRound++){
 
                 function playRound(playerSelection, computerSelection){ 
@@ -62,24 +63,38 @@
                 // Declare the Players Choice and Computers Choice
                 let playerSelection = prompt("Rock, Paper or Scissors?");
                 const computerSelection = computerPlay();
-
                 console.log(`You have chosen: ${playerSelection.toUpperCase()}`);
 
+                // Starts the Game Round
                 console.log(playRound(playerSelection, computerSelection));
 
             }
             
+            // Game Over Message
             if (playerScore > computerScore) {
                 alert(`You win! You scored: ${playerScore} against ${computerScore}`);
-            } else {
+            } else if (playerScore < computerScore) {
                 alert(`You lose! You scored: ${playerScore} against ${computerScore}`);
+            } else {
+                alert(`Draw! You scored: ${playerScore} against ${computerScore}`);
             }
-
         }
 
+        // Starts the Game
         console.log(game());
-        
 
+        // Play Again Loop (Will cancel when User declines)
+        let continueGame = 1;
+        while (continueGame = 1){
+            let playAgain = confirm("Play again?");
+                if (playAgain) {
+                    console.log(game());
+                }
+                else {
+                    alert("Goodbye!");
+                    continueGame--;
+                }
+        }
     </script>
 </body>
 </html>
