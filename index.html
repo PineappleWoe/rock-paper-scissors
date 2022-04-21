@@ -18,9 +18,6 @@
 
                 function playRound(playerSelection, computerSelection){ 
 
-                    
-                    
-
                     // Compares Player input to the Computer, decides the Winner of the Round
                     if (computerSelection.toUpperCase() === playerSelection.toUpperCase()){
                         playerScore++;
@@ -54,7 +51,6 @@
                     console.log(computerSelection);
                 }
 
-
                 // Function to call random item for 'Rock Paper Scissors' Game
                 // aiItem returns the randomised choice
                 function computerPlay(){
@@ -72,10 +68,12 @@
                 console.log(playRound(playerSelection, computerSelection));
 
             }
-
-
             
-            alert(`Game over! You scored: ${playerScore} against ${computerScore}`);
+            if (playerScore > computerScore) {
+                alert(`You win! You scored: ${playerScore} against ${computerScore}`);
+            } else {
+                alert(`You lose! You scored: ${playerScore} against ${computerScore}`);
+            }
 
         }
 
