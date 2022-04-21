@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to call random item for Rock Paper Scissors Game
+        function computerPlay(){
+            const itemChoice = ["Rock", "Paper", "Scissors"];
+            let aiItem = itemChoice[Math.floor(Math.random()*itemChoice.length)];
+            return aiItem;
+        }
+
+        let playerSelection = prompt("Rock, Paper or Scissors?");
+        const computerSelection = computerPlay();
+
+        console.log(`Player Choice: ${playerSelection}`);
+
+        if (computerSelection.toUpperCase === playerSelection.toUpperCase){
+            console.log("Draw! Refresh to play again");
+            console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`);
+        } else if (computerSelection === "Rock" && playerSelection.toUpperCase === "PAPER") {
+            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+        } else if (computerSelection === "Rock" && playerSelection.toUpperCase === "SCISSORS") {
+            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+        } else if (computerSelection === "Paper" && playerSelection.toUpperCase === "ROCK") {
+            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+        } else if (computerSelection === "Paper" && playerSelection.toUpperCase === "SCISSORS") {
+            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase === "ROCK") {
+            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase === "PAPER") {
+            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+        } else {
+            console.log("Please refresh and input a valid input.");
+        }
+
+        console.log(computerSelection);
+
+    //    let computerPlay;
+    //    let rockPaperScissors = ["Rock", "Paper", "Scissors"];
+    //    computerPlay = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
+    //    console.log(computerPlay);
+
+    </script>
+</body>
+</html>
