@@ -8,41 +8,72 @@
 </head>
 <body>
     <script>
-        // Function to call random item for 'Rock Paper Scissors' Game
-        // aiItem returns the randomised choice
-        function computerPlay(){
-            const itemChoice = ["Rock", "Paper", "Scissors"];
-            let aiItem = itemChoice[Math.floor(Math.random()*itemChoice.length)];
-            return aiItem;
+        function game(){
+
+            for (let gameRound = 0; gameRound < 3; gameRound++){
+
+                function playRound(playerSelection, computerSelection){ 
+
+                    
+                    
+                    // Score
+                    let playerScore = 0;
+                    let computerScore= 0;
+
+                    // Decides the Winner
+                    if (computerSelection.toUpperCase() === playerSelection.toUpperCase()){
+                        console.log("Draw! Refresh to play again");
+                        console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`);
+                        playerScore++;
+                        computerScore++;
+                    } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "PAPER") {
+                        console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+                        playerScore++;
+                    } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "SCISSORS") {
+                        console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+                        computerScore++;
+                    } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "ROCK") {
+                        console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+                        computerScore++;
+                    } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "SCISSORS") {
+                        console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+                        playerScore++;
+                    } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "ROCK") {
+                        console.log(`Game! ${playerSelection} beats ${computerSelection}`);
+                        playerScore++;
+                    } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "PAPER") {
+                        console.log(`Game! ${computerSelection} beats ${playerSelection}`);
+                        playerScore++;
+                    } else {
+                        console.log("Please refresh and input a valid input.");
+                    }
+                    
+                    console.log(computerSelection);
+                }
+
+
+                // Function to call random item for 'Rock Paper Scissors' Game
+                // aiItem returns the randomised choice
+                function computerPlay(){
+                    const itemChoice = ["Rock", "Paper", "Scissors"];
+                    let aiItem = itemChoice[Math.floor(Math.random()*itemChoice.length)];
+                    return aiItem;
+                }
+
+                // Declare the Players Choice and Computers Choice
+                let playerSelection = prompt("Rock, Paper or Scissors?");
+                const computerSelection = computerPlay();
+
+                console.log(`You have chosen: ${playerSelection.toUpperCase()}`);
+
+                console.log(playRound(playerSelection, computerSelection));
+
+            }   
+
         }
 
-        // Declare the Players Choice and Computers Choice
-        let playerSelection = prompt("Rock, Paper or Scissors?");
-        const computerSelection = computerPlay();
-
-        console.log(`Player Choice: ${playerSelection}`);
-
-        // Decides the Winner
-        if (computerSelection.toUpperCase() === playerSelection.toUpperCase()){
-            console.log("Draw! Refresh to play again");
-            console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`);
-        } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "PAPER") {
-            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "SCISSORS") {
-            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
-        } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "ROCK") {
-            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
-        } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "SCISSORS") {
-            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "ROCK") {
-            console.log(`Game! ${playerSelection} beats ${computerSelection}`);
-        } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "PAPER") {
-            console.log(`Game! ${computerSelection} beats ${playerSelection}`);
-        } else {
-            console.log("Please refresh and input a valid input.");
-        }
-
-        console.log(computerSelection);
+        console.log(game());
+        
 
     </script>
 </body>
