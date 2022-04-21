@@ -17,34 +17,36 @@
             // For Loop for 'Best out of 3' results
             for (let gameRound = 0; gameRound < 3; gameRound++){
 
+                // Game Round Function
                 function playRound(playerSelection, computerSelection){ 
 
                     // Compares Player input to the Computer, decides the Winner of the Round
+                    // If Draw then both the Player and Computer recieve a Point
                     if (computerSelection.toUpperCase() === playerSelection.toUpperCase()){
                         playerScore++;
                         computerScore++;
                         alert(`Draw! Score: ${playerScore} ${computerScore}`);
-                        console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`);       
+                        console.log(`Player Choice: ${playerSelection}, Computer Choice: ${computerSelection}`); 
                     } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "PAPER") {
-                        playerScore++;
+                        playerScore++;      // ^ Player Paper beats Computer Rock
                         alert(`Point to you! ${playerSelection} beats ${computerSelection}! Score: ${playerScore} ${computerScore}`);
                     } else if (computerSelection === "Rock" && playerSelection.toUpperCase() === "SCISSORS") {
-                        computerScore++;
+                        computerScore++;    // ^ Computer Rock beats Player Scissors
                         alert(`Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`);
                     } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "ROCK") {
-                        computerScore++;
+                        computerScore++;    // ^ Computer Paper beats Player Rock
                         alert(`Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`);
                     } else if (computerSelection === "Paper" && playerSelection.toUpperCase() === "SCISSORS") {
-                        playerScore++;
+                        playerScore++;      // ^ Player Scissors beats Computer Paper
                         alert(`Point to you! ${playerSelection} beats ${computerSelection} Score: ${playerScore} ${computerScore}`);
                     } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "ROCK") {
-                        playerScore++;
+                        playerScore++;      // ^ Player Rock beats Computer Scissors
                         alert(`Point to you! ${playerSelection} beats ${computerSelection} Score: ${playerScore} ${computerScore}`);                  
                     } else if (computerSelection === "Scissors" && playerSelection.toUpperCase() === "PAPER") {
-                        playerScore++;
+                        playerScore++;      // ^ Computer Scissors beats Player Paper
                         alert(`Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`);
                     } else {
-                        gameRound = 0;
+                        gameRound = 0;      // Resets the Game - Need to change this to not reset halfway through a Game
                         alert("Please refresh and input a valid input.");
                         playerSelection = prompt("Rock, Paper or Scissors?");
                     }
@@ -61,6 +63,7 @@
                 }
 
                 // Declare the Players Choice and Computers Choice
+                // Computer Choice is called from the computerPlay function above and assigned to computerSelection
                 let playerSelection = prompt("Rock, Paper or Scissors?");
                 const computerSelection = computerPlay();
                 console.log(`You have chosen: ${playerSelection.toUpperCase()}`);
@@ -83,7 +86,7 @@
         // Starts the Game
         console.log(game());
 
-        // Play Again Loop (Will cancel when User declines)
+        // Play Again Loop (Will cancel when user declines)
         for (let continueGame = 1; continueGame > 0;){
             let playAgain = confirm("Play again?");
                 if (playAgain) {
