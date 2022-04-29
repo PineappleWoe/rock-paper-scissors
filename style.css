@@ -45,11 +45,17 @@ p{
     justify-content: center;
     align-items: center;
 }
+.choice-img{
+    filter: drop-shadow(0 0 0 #ff10f0);
+}
 .choice-img:hover{
+    transform: scale(1.1);
     filter: drop-shadow(0 0 20px #ff10f0);
+    transition: .5s ease;
 }
 .player-selection-btns img{
     max-width: 200px;
+    
 }
 .game-info{
     font-size: 24px;
