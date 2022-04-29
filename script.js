@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 
+// HTML Elements - Updates Score and Comments on the Round Outcome
 const scoreDiv = document.querySelector('.game-info');
 const scoreCounter = document.createElement('p');
 const resultComment = document.createElement('p');
@@ -12,18 +13,23 @@ scoreCounter.textContent = `${playerScore} : ${computerScore}`;
 scoreDiv.appendChild(scoreCounter);
 scoreDiv.appendChild(resultComment);
 
+
+// Game Begins via HTML Buttons - Assigns the Players Choice
 function playRound(option){
     let playerSelection = option.value;
     let computerSelection
 
+    // Calculates Computers Choice
     function ComputerPlay(){
         const itemChoice = ["Rock", "Paper", "Scissors"];
         computerSelection = itemChoice[Math.floor(Math.random()*itemChoice.length)];
         return computerSelection;
     };
 
+    // Calls the Computers Choice from Function
     ComputerPlay();
 
+    // Outcomes
     if (computerSelection === playerSelection){
         playerScore++;
         computerScore++;
@@ -49,13 +55,9 @@ function playRound(option){
         playerScore++;      // ^ Player Rock beats Computer Scissors
         scoreCounter.textContent = `${playerScore} : ${computerScore}`;
         resultComment.textContent = `Point to you! ${playerSelection} beats ${computerSelection} Score: ${playerScore} ${computerScore}`;                  
-    } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
+    } else {
         playerScore++;      // ^ Computer Scissors beats Player Paper
         scoreCounter.textContent = `${playerScore} : ${computerScore}`;
         resultComment.textContent = `Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`;
-    } else {
-        gameRound = 0;      // Resets the Game - Need to change this to not reset halfway through a Game
-        alert("Please refresh and input a valid input.");
-        playerSelection = prompt("Rock, Paper or Scissors?");
     }
 }

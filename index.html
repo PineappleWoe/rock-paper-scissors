@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors | The Odin Project</title>
 </head>
-<body>
+<body class="container">
 
-    <main class="container">
-        <div>
-            <h1>Rock, Paper, Scissors</h1>
-            <h2>Choose your Weapon</h2>
+    <main class="game">
+        <div class="heading">
+            <h1 class="heading__title">Rock, Paper, Scissors</h1>
+            <h2 class="heading__sub-title">Choose your Weapon</h2>
         </div>
+        
         <div class="player-selection-btns">
-            <button id="rock" value="Rock" onclick="playRound(this)">Rock</button>
-            <button id="paper" value="Paper" onclick="playRound(this)">Paper</button>
-            <button id="scissors" value="Scissors" onclick="playRound(this)">Scissors</button>
+            <button id="rock" class="btn" value="Rock" onclick="playRound(this)">Rock</button>
+            <button id="paper" class="btn" value="Paper" onclick="playRound(this)">Paper</button>
+            <button id="scissors" class="btn" value="Scissors" onclick="playRound(this)">Scissors</button>
         </div>
+
         <div class="game-info">
+            <!-- Javascipt -->
         </div>
     </main>
 
