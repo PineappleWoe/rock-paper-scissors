@@ -60,3 +60,9 @@ p{
 .game-info{
     font-size: 24px;
 }
+/* Media */
+@media (max-width: 600px){
+    .player-selection-btns{
+        flex-direction: column;
+    }
+}
