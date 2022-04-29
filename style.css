@@ -1,0 +1,56 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto&display=swap');
+    /* font-family: 'Raleway', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+
+/* Colour Palette */
+:root{
+    --background-light: #fffaff;
+}
+
+/* Reset */
+body{
+    margin: 0;
+}
+h1, h2{
+    font-family: 'Raleway', sans-serif;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+.btn{
+    border: none;
+    background: none;
+}
+/* Style */
+.container{
+    width: 100%;
+    background-color: var(--background-light);
+}
+.game{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.heading, .game-info{
+    text-align: center;
+}
+.player-selection-btns{
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.choice-img:hover{
+    filter: drop-shadow(0 0 20px #ff10f0);
+}
+.player-selection-btns img{
+    max-width: 200px;
+}
+.game-info{
+    font-size: 24px;
+}

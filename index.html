@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors | The Odin Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="container">
 
@@ -13,11 +14,17 @@
             <h1 class="heading__title">Rock, Paper, Scissors</h1>
             <h2 class="heading__sub-title">Choose your Weapon</h2>
         </div>
-        
+
         <div class="player-selection-btns">
-            <button id="rock" class="btn" value="Rock" onclick="playRound(this)">Rock</button>
-            <button id="paper" class="btn" value="Paper" onclick="playRound(this)">Paper</button>
-            <button id="scissors" class="btn" value="Scissors" onclick="playRound(this)">Scissors</button>
+            <button id="rock" class="btn" value="Rock" onclick="playRound(this)">
+                <img src="assets/Rock.png" alt="Rock" class="choice-img">
+            </button>
+            <button id="paper" class="btn" value="Paper" onclick="playRound(this)">
+                <img src="assets/Paper.png" alt="Paper" class="choice-img">
+            </button>
+            <button id="scissors" class="btn" value="Scissors" onclick="playRound(this)">
+                <img src="assets/Scissors.png" alt="Scissors" class="choice-img">
+            </button>
         </div>
 
         <div class="game-info">
