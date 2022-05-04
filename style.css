@@ -70,6 +70,7 @@ p{
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -80,14 +81,25 @@ p{
     background-color: #25252580;
     backdrop-filter: blur(10px);
 }
-.game-results p{
-    color: var(--background-light);
-    font-size: 48px;
-}
 .game-finished{
     pointer-events: auto;
     opacity: 1;
     transition: .5s ease;
+}
+.game-results p{
+    color: var(--background-light);
+    font-size: 48px;
+}
+.reset-btn{
+    width: 200px;
+    height: 48px;
+    font-size: 20px;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 2px;
+    box-shadow: 6px 0px 0px #00e6f6;
+    outline: transparent;
 }
 /* Media */
 @media (max-width: 600px){

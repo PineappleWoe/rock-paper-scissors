@@ -13,6 +13,13 @@ scoreCounter.textContent = `${playerScore} : ${computerScore}`;
 scoreDiv.appendChild(scoreCounter);
 scoreDiv.appendChild(resultComment);
 
+// HTML Elements - Game Over
+const gameResultsDiv = document.querySelector('.game-results');
+const gameResultsMsg = document.createElement('p');
+const resetButton = document.querySelector('.reset-btn');
+
+gameResultsDiv.insertBefore(gameResultsMsg, resetButton);
+
 // Game Begins via HTML Buttons - Assigns the Players Choice
 function playRound(option){
     let playerSelection = option.value;
@@ -60,12 +67,7 @@ function playRound(option){
         resultComment.textContent = `Point to AI! ${computerSelection} beats ${playerSelection} Score: ${playerScore} ${computerScore}`;
     }
 
-    // HTML Elements - Game Over
-    const gameResultsDiv = document.querySelector('.game-results');
-    const gameResultsMsg = document.createElement('p');
-
-    gameResultsDiv.appendChild(gameResultsMsg);
-
+    // Game Over Screen
     if (playerScore == 5 || computerScore == 5){
         if (playerScore == computerScore){
             gameResultsDiv.classList.add('game-finished');
@@ -78,5 +80,18 @@ function playRound(option){
             gameResultsMsg.textContent = "You lose";
         }
     }
+
+    // Reset Game
+    function gameReset(){
+        playerScore = 0;
+        computerScore = 0;
+        scoreCounter.textContent = `${playerScore} : ${computerScore}`;
+        resultComment.textContent = "New Game!";
+    
+        gameResultsDiv.classList.remove('game-finished');
+    }
+
+    resetButton.addEventListener('click', gameReset, true);
 }
+
 
