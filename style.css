@@ -101,6 +101,10 @@ p{
     box-shadow: 6px 0px 0px #00e6f6;
     outline: transparent;
 }
+.reset-btn:hover{
+    transform: scale(0.98);
+    background: linear-gradient(45deg, transparent 5%, #f00038 5%);
+}
 /* Media */
 @media (max-width: 600px){
     .player-selection-btns{
